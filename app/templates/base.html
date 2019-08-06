@@ -1,0 +1,21 @@
+{% load static %}
+
+<head>
+    <title>Titulo Prron</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/app.css' %}">
+</head>
+<body>
+    <p class='titulo_pagina'><img src="{% static 'app/image/paloma.jpg' %}" width='50' height='50'> Estudiantes de APU <img src="{% static 'app/image/paloma.jpg' %}" width='50' height='50'></p>
+    <nav class='navegacion'>
+        <a href='crear_post'>Crear Post</a>
+    </nav>
+    <aside>
+        <p>Referencias:</p>
+        <p>Página de Facebook</p>
+        <p>Cuenta de Twitter</p>
+        <p>Página hecha por Nico123</p>
+    </aside>
+    <div id="contenido">
+        {% block contenido %}{% endblock %}
+    </div>
+</body>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block contenido %}
+    {% for mensaje in mensajes %}
+    <section class='post'>
+        <h1>{{mensaje.title}}</h1>
+        <p class='author'>Autor: {{mensaje.author}}</p>
+        <p class='texto_nota'>{{mensaje.text}}</p>
+        <p class='fecha_publicacion'>{{mensaje.published_date}}</p>
+    </section>
+    {% endfor %}
+{% endblock %}

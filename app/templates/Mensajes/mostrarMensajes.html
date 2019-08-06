@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block contenido %}
+    <a href="mensajes/crearMensajes">Crear Mensaje</a>
+    <table>
+        {% for mensaje in mensajes %}
+        <tr>
+            <td>Usuario: {{mensaje.author}}</td>
+            <td>Mensaje: {{mensaje.text}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

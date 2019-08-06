@@ -1,0 +1,48 @@
+body{
+    background-image: url(../image/fondo.png);
+    background-size: cover;
+}
+.titulo_pagina{
+    background-color: white;
+    text-align: center;
+    font-size: 80px;
+    color: black;
+    margin-bottom: 0px;
+}
+nav{
+    margin: 5px 0px 0px 5px;
+    padding-left: 20px;
+    background-color: white;
+    font-size: 35px;
+}
+.post{
+    background-color: white;
+    float: left;
+    width: 70%;
+    text-align: center;
+    border: 5px solid black;
+    margin: 10px 0px 0px 0px;
+}
+h1{
+    text-decoration: underline;
+}
+aside{
+	border:1px solid black;
+	background-color: white;
+	float:right;
+	width:25%;
+	margin-top:15px;
+	margin-right: 10px;
+	padding-left: 10px;
+ 	text-decoration:underline;
+	font-size:20px;
+}
+.texto_nota{
+    text-align: left;
+    padding-left: 15px;
+    font-size: 25px;
+}
+.fecha_publicacion{
+    text-align: right;
+    padding-right: 5px;
+}

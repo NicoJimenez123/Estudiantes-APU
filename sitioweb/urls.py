@@ -18,7 +18,8 @@ from django.contrib import admin
 from app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.post_list, name='post_list'),
     path('crear_post/', views.crear_post, name='crear_post'),
+    path('login/', views.login, name='login'),
+    path('admin/', admin.site.urls),
 ]

@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block contenido %}
     <section class='post'>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit" />
-            <a href="/">Volver</a>
-        </form>
+        {% if form %}
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit" />
+                <a href="{% url 'post_list' %}">Volver</a>
+            </form>
+        {% else %}
+            <p>Debes Iniciar Sesión para Crear un Post.</p>
+        {% endif %}
     </section>
 {% endblock %}

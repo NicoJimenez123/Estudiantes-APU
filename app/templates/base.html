@@ -7,8 +7,9 @@
 <body>
     <p class='titulo_pagina'><img src="{% static 'app/image/paloma.jpg' %}" width='50' height='50'> Estudiantes de APU <img src="{% static 'app/image/paloma.jpg' %}" width='50' height='50'></p>
     <nav class='navegacion'>
-        <a href='crear_post'>Crear Post</a>
-        <a href='login'>  Iniciar Sesión</a>
+        <a href='{% url "post_list" %}'>Lista de Posts</a>
+        <a href='{% url "crear_post" %}'>Crear Post</a>
+        <a href='{% url "login" %}'>  Iniciar Sesión</a>
     </nav>
     <aside>
         <p>Referencias:</p>

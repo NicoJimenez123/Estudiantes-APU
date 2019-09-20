@@ -20,13 +20,15 @@ def crear_post(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-            post = Post(author=form.cleaned_data['author'],
+            post = Post(author=request.user,
                         title=form.cleaned_data['title'],
                         text=form.cleaned_data['text'],
                         created_date=timezone.now(),
                         published_date=timezone.now())
             post.save()
             return redirect('post_list')
+    if not request.user.is_authenticated:
+        form = False
     else:
         form = PostForm
     return render(request, 'app/crear_post.html', {'form':form})
@@ -50,4 +52,24 @@ def login(request):
                 do_login(request, user)
                 return redirect('post_list')
     # Si llegamos al final renderizamos el formulario
-    return render(request, "app/login.html",{'form': form})
+    if not request.user.is_authenticated:
+        return render(request, "app/login.html",{'form': form})
+    else:
+        return render(request, "app/logueado.html")
+
+
+def register(request):
+    form = UserCreationForm()
+    if request.method == "POST":
+        form = UserCreationForm(data=request.POST)
+        if form.is_valid():
+            user = form.save()
+            if user is not None:
+                do_login(request, user)
+                return redirect('post_list')
+    return render(request, "app/register.html",{"form":form})
+
+
+def logout(request):
+    do_logout(request)
+    return redirect('login')
